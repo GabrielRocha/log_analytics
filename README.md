@@ -19,6 +19,11 @@ The challenge description is on [CHALLENGE.md](CHALLENGE.md).
 pip install -r requirements-dev.txt
 ```
 
+#### Bash Command
+```bash
+pip install --editable .
+```
+
 ### Tests
 
 ```bash
