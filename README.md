@@ -31,3 +31,23 @@ pytest .
 ```
 
 ### Usage
+
+Print the log's content
+```bash
+log_analytics show-log --file example/data/race.log
+```
+OR
+```bash
+python cli.py show-log --file example/data/race.log
+```
+
+
+```bash
+log_analytics race-result --file example/data/race.log
+
+```
+OR
+```bash
+python cli.py race-result --file example/data/race.log
+
+```
