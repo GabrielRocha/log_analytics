@@ -12,7 +12,7 @@ class Driver:
 
     @property
     def best_lap(self):
-        return min([lap for lap in self.laps], key=lambda x: x.lap_time_seconds)
+        return min(self.laps, key=lambda x: x.lap_time_seconds)
 
     def __repr__(self):
         return self.name
