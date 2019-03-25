@@ -44,6 +44,7 @@ def test_race_result():
     assert result[0][1].name == 'R.BARRICHELLO'
     assert result[1][0] == 2
     assert result[1][1].name == 'F.MASSA'
+    assert result[1][1].laps_behind_first_place == '+3 Lap(s)'
 
 
 def test_race_best_lap():

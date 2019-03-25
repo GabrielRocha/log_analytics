@@ -30,7 +30,9 @@ class Race:
         while lap > 0 and drivers:
             positions = [driver for driver in drivers if len(driver.laps) == lap]
             final_positions += sorted(positions, key=lambda x: x.race_time)
-            [drivers.remove(driver) for driver in positions]  # Remove the driver that finished the race
+            for driver in positions:
+                driver.laps_behind_first_place = f'+{self.FINAL_LAP - len(driver.laps)} Lap(s)'
+                drivers.remove(driver)  # Remove the driver that finished the race
             lap -= 1
         return enumerate(final_positions, start=1)
 
