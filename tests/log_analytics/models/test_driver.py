@@ -16,3 +16,13 @@ def test_driver_race_time():
         Lap('2', '1:03.716', '43,675')
     ]
     assert driver.race_time == '02:7.432000'
+
+
+def test_driver_best_lap():
+    driver = Driver('033', 'R.BARRICHELLO')
+    driver.laps = [
+        Lap('1', '1:13.716', '43,675'),
+        Lap('2', '1:03.716', '43,675')
+    ]
+    assert driver.best_lap.number == '2'
+    assert driver.best_lap.lap_time == '1:03.716'

@@ -10,5 +10,9 @@ class Driver:
         minutes, seconds = divmod(time, 60)
         return "%02d:%f" % (minutes, seconds)
 
+    @property
+    def best_lap(self):
+        return min([lap for lap in self.laps], key=lambda x: x.lap_time_seconds)
+
     def __repr__(self):
         return self.name
