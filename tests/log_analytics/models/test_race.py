@@ -27,8 +27,8 @@ def test_race_object_with_laps_less_than_4():
     assert len(race.drivers['033'].laps) == 2
     assert race.drivers['038'].name == 'F.MASSA'
     assert race.drivers['038'].id == '038'
-    assert len(race.drivers['038'].laps) == 1
-    assert race.drivers['038'].race_time == '02:3.716000'
+    assert len(race.drivers['038'].laps) == 2
+    assert race.drivers['038'].race_time == '03:7.432000'
 
 
 def test_race_result():
@@ -44,7 +44,7 @@ def test_race_result():
     assert result[0][1].name == 'R.BARRICHELLO'
     assert result[1][0] == 2
     assert result[1][1].name == 'F.MASSA'
-    assert result[1][1].laps_behind_first_place == '+3 Lap(s)'
+    assert result[1][1].laps_behind_first_place == '+2 Lap(s)'
 
 
 def test_race_best_lap():

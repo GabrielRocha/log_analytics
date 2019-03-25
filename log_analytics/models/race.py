@@ -20,20 +20,15 @@ class Race:
                 self.drivers[driver_id] = driver
             else:
                 self.drivers[driver_id].laps.append(lap)
-            if lap.number == '4':
-                break
 
     def result(self):
-        final_positions = []
-        drivers = list(self.drivers.values())
-        lap = self.FINAL_LAP
-        while lap > 0 and drivers:
-            positions = [driver for driver in drivers if len(driver.laps) == lap]
-            final_positions += sorted(positions, key=lambda x: x.race_time)
-            for driver in positions:
+        final_positions = sorted(self.drivers.values(), key=lambda x: x.race_time)
+        first = final_positions[0]
+        for driver in final_positions[1:]:
+            if self.FINAL_LAP == len(driver.laps):
+                driver.laps_behind_first_place = f'+{driver.race_time_seconds - first.race_time_seconds:.3f} seconds'
+            else:
                 driver.laps_behind_first_place = f'+{self.FINAL_LAP - len(driver.laps)} Lap(s)'
-                drivers.remove(driver)  # Remove the driver that finished the race
-            lap -= 1
         return enumerate(final_positions, start=1)
 
     @property
