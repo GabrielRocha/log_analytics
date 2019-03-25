@@ -29,3 +29,18 @@ def test_race_object_with_laps_less_than_4():
     assert race.drivers['038'].id == '038'
     assert len(race.drivers['038'].laps) == 1
     assert race.drivers['038'].race_time == '02:3.716000'
+
+
+def test_race_result():
+    lap = [
+        ['033 – R.BARRICHELLO', '1', '1:03.716', '43,675'],
+        ['038 – F.MASSA', '1', '2:03.716', '43,675'],
+        ['033 – R.BARRICHELLO', '4', '1:03.716', '43,675'],
+        ['038 – F.MASSA', '2', '1:03.716', '43,675'],
+    ]
+    race = Race(lap)
+    result = list(race.result())
+    assert result[0][0] == 1
+    assert result[0][1].name == 'R.BARRICHELLO'
+    assert result[1][0] == 2
+    assert result[1][1].name == 'F.MASSA'
