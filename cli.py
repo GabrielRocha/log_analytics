@@ -39,7 +39,7 @@ def race_result(file):
             '**Qtde Voltas Completadas**',
             '**Tempo Total de Prova**',
             '**Velocidade Média**',
-            '**Voltas atrás do Primeiro**'
+            '**Tempo atrás do Primeiro**'
         ],
         numalign='center'
     ))
