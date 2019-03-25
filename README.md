@@ -36,12 +36,13 @@ pytest .
 ```bash
 python cli.py --help
 ```
+or
+```bash
+log_analytics --help
+```
+
 
 #### Print the log's content
-```bash
-log_analytics show-log --file example/data/race.log
-```
-or
 ```bash
 python cli.py show-log --file example/data/race.log
 ```
