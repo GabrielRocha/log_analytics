@@ -14,5 +14,10 @@ class Driver:
     def best_lap(self):
         return min(self.laps, key=lambda x: x.lap_time_seconds)
 
+    @property
+    def average_speed(self):
+        sum_speed = sum([float(lap.average_speed.replace(',', '.')) for lap in self.laps])
+        return sum_speed/len(self.laps)
+
     def __repr__(self):
         return self.name
