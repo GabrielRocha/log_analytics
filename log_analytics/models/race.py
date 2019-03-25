@@ -34,5 +34,12 @@ class Race:
             lap -= 1
         return enumerate(final_positions, start=1)
 
+    @property
+    def best_lap(self):
+        return min(
+            [driver for driver in self.drivers.values()],
+            key=lambda x: x.best_lap.lap_time_seconds
+        )
+
     def __repr__(self):
         return f'Race - {id(self)}'

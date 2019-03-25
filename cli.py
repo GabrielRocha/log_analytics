@@ -54,5 +54,22 @@ def best_lap(file):
     ))
 
 
+@main.command(help='The race best lap')
+@click.option('--file', help='File name with path')
+def race_best_lap(file):
+    driver = analysis.build_race(file).best_lap
+    result = [(driver.id, driver.name, driver.best_lap.number, driver.best_lap.lap_time)]
+    click.echo(tabulate(
+        result,
+        headers=[
+            '**Código Piloto**',
+            '**Nome Piloto**',
+            '**Número da Melhor Volta**',
+            '**Tempo da Melhor Volta**',
+        ],
+        numalign='center'
+    ))
+
+
 if __name__ == '__main__':
     main()

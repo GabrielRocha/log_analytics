@@ -44,3 +44,16 @@ def test_race_result():
     assert result[0][1].name == 'R.BARRICHELLO'
     assert result[1][0] == 2
     assert result[1][1].name == 'F.MASSA'
+
+
+def test_race_best_lap():
+    lap = [
+        ['033 – R.BARRICHELLO', '1', '1:03.716', '43,675'],
+        ['038 – F.MASSA', '1', '2:03.716', '43,675'],
+        ['033 – R.BARRICHELLO', '4', '1:03.716', '43,675'],
+        ['038 – F.MASSA', '2', '1:03.716', '43,675'],
+    ]
+    race = Race(lap)
+    driver = race.best_lap
+    assert driver.name == 'R.BARRICHELLO'
+    assert driver.best_lap.lap_time == '1:03.716'
