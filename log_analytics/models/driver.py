@@ -6,10 +6,7 @@ class Driver:
 
     @property
     def race_time(self):
-        time = 0
-        for lap in self.laps:
-            _minutes, _seconds = lap.lap_time.split(':')
-            time += int(_minutes)*60 + float(_seconds)
+        time = sum(lap.lap_time_seconds for lap in self.laps)
         minutes, seconds = divmod(time, 60)
         return "%02d:%f" % (minutes, seconds)
 
