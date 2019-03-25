@@ -17,6 +17,7 @@ The challenge description is on [CHALLENGE.md](CHALLENGE.md).
 
 ```bash
 pip install -r requirements-dev.txt
+pre-commit install
 ```
 
 #### Bash Command
