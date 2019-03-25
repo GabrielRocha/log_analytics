@@ -3,12 +3,16 @@ class Driver:
         self.id = id
         self.name = name
         self.laps = []
+        self.laps_behind_first_place = None
 
     @property
     def race_time(self):
-        time = sum(lap.lap_time_seconds for lap in self.laps)
-        minutes, seconds = divmod(time, 60)
+        minutes, seconds = divmod(self.race_time_seconds, 60)
         return "%02d:%f" % (minutes, seconds)
+
+    @property
+    def race_time_seconds(self):
+        return sum(lap.lap_time_seconds for lap in self.laps)
 
     @property
     def best_lap(self):
