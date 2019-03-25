@@ -32,11 +32,16 @@ pytest .
 
 ### Usage
 
+#### Help
+```bash
+python cli.py --help
+```
+
 #### Print the log's content
 ```bash
 log_analytics show-log --file example/data/race.log
 ```
-OR
+or
 ```bash
 python cli.py show-log --file example/data/race.log
 ```
@@ -44,32 +49,18 @@ python cli.py show-log --file example/data/race.log
 
 #### List the race result
 ```bash
-log_analytics race-result --file example/data/race.log
-
-```
-OR
-```bash
 python cli.py race-result --file example/data/race.log
 
 ```
 
 #### The best lap of each driver
-```bash
-log_analytics best-lap --file example/data/race.log
 
-```
-OR
 ```bash
 python cli.py best-lap --file example/data/race.log
 
 ```
 
 #### The race best lap
-```bash
-log_analytics race-best-lap --file example/data/race.log
-
-```
-OR
 ```bash
 python cli.py race-best-lap --file example/data/race.log
 
