@@ -19,7 +19,15 @@ def show_log(file):
 @click.option('--file', help='File name with path')
 def race_result(file):
     result = [
-        [position, driver.id, driver.name, len(driver.laps), driver.race_time, driver.average_speed, driver.laps_behind_first_place]
+        [
+            position,
+            driver.id,
+            driver.name,
+            len(driver.laps),
+            driver.race_time,
+            driver.average_speed,
+            driver.laps_behind_first_place
+        ]
         for position, driver in analysis.build_race(file).result()
     ]
     click.echo(tabulate(

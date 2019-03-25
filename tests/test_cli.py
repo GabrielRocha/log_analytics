@@ -26,7 +26,8 @@ def test_best_lap_command(runner, dir_file):
     assert result.exit_code == 0
     assert result.output == ' **Código Piloto**   **Nome Piloto**     **Número da Melhor Volta**' \
                             '   **Tempo da Melhor Volta**\n' \
-                            '-------------------  -----------------  ----------------------------  ---------------------------\n'\
+                            '-------------------  -----------------  ----------------------------  ' \
+                            '---------------------------\n'\
                             '        033          R.BARRICHELLO                   3                1:03.716\n'
 
 
@@ -35,5 +36,6 @@ def test_race_best_lap_command(runner, dir_file):
     assert result.exit_code == 0
     assert result.output == ' **Código Piloto**   **Nome Piloto**     **Número da Melhor Volta**' \
                             '   **Tempo da Melhor Volta**\n' \
-                            '-------------------  -----------------  ----------------------------  ---------------------------\n'\
+                            '-------------------  -----------------  ---------------------------- ' \
+                            ' ---------------------------\n'\
                             '        033          R.BARRICHELLO                   3                1:03.716\n'
