@@ -16,3 +16,13 @@ def test_race_result_command(runner, dir_file):
                             ' -----------------------------  --------------------------\n' \
                             '          1                    033          R.BARRICHELLO          ' \
                             '          2                02:7.432000\n'
+
+
+def test_best_lap_command(runner, dir_file):
+    result = runner.invoke(cli.best_lap, ['--file', f'{dir_file}/resource/race.log'])
+    assert result.exit_code == 0
+    print(result.output)
+    assert result.output == ' **Código Piloto**   **Nome Piloto**     **Número da Melhor Volta**' \
+                            '   **Tempo da Melhor Volta**\n' \
+                            '-------------------  -----------------  ----------------------------  ---------------------------\n'\
+                            '        033          R.BARRICHELLO                   3                1:03.716\n'
